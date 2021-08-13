@@ -60,3 +60,9 @@ it("works when you click on the left arrow", () => {
     queryByAltText("Photo by Richard Pasquarella on Unsplash")
   ).toBeInTheDocument();
 });
+
+it("does not display left arrow on first image", () => {
+  const { queryByTestId, queryByAltText } = render(<Carousel />);
+
+  expect(queryByTestId("left-arrow")).not.toBeVisible();
+});
